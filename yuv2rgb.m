@@ -1,5 +1,7 @@
 function ret = yuv2rgb(x)
 
+x = x.*255
+
 Y = x(:,:,1);
 U = x(:,:,2);
 V = x(:,:,3);
@@ -13,6 +15,4 @@ R = invA(1,1)*(Y-16)                     + invA(1,3)*(V-128);
 G = invA(2,1)*(Y-16) + invA(2,2)*(U-128) + invA(2,3)*(V-128);
 B = invA(3,1)*(Y-16) + invA(3,2)*(U-128);
 
-ret = R;
-ret(:,:,2) = G;
-ret(:,:,3) = B;
+ret = cat(3,R,G,B)./255;

@@ -1,5 +1,8 @@
 function ret = rgb2yuv(x)
 
+
+x = double(x)
+
 R = x(:,:,1);
 G = x(:,:,2);
 B = x(:,:,3);
@@ -15,4 +18,5 @@ Cr = A(3,1)*R + A(3,2)*G + A(3,3)*B + 128;
 ret = Y;
 ret(:,:,2) = Cb;
 ret(:,:,3) = Cr;
+ret = ret./255
 
