@@ -15,9 +15,6 @@ def myread(file):
 
 	return img
 
-def rgb2yuv(image):opencv
-	return
-
 
 if __name__ == "__main__":
 
@@ -27,15 +24,18 @@ if __name__ == "__main__":
 	octave.addpath(scriptPath)
 	octave.pkg('load', 'image')
 	
-	img = myread(file)
-	print img[3].shap4
+	img = cv2.imread(file,cv2.CV_LOAD_IMAGE_GRAYSCALE)
+	image = Image.open(file).convert("L")
 
 
-	#img_cor = octave.histcor(img)
-	if 0:
-		plt.figure(1)
-		plt.imshow(img)
-		plt.show()
+	img_cor = octave.histcor(image)
+	im = Image.fromarray(img_cor)
+	plt.figure(1)
+	plt.subplot(2,1,1)
+	plt.imshow(image.convert("LA"))
+	plt.subplot(2,1,2)
+	plt.imshow(im)
+	plt.show()
 	
 
 
