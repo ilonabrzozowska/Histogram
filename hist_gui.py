@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'hist.ui'
 #
-# Created: Sun Jan 10 01:46:50 2016
+# Created: Sun Jan 10 14:52:17 2016
 #      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -30,9 +30,6 @@ class Ui_Form(object):
         self.loadButton = QtGui.QPushButton(Form)
         self.loadButton.setGeometry(QtCore.QRect(20, 50, 171, 31))
         self.loadButton.setObjectName(_fromUtf8("loadButton"))
-        self.colorRadio = QtGui.QRadioButton(Form)
-        self.colorRadio.setGeometry(QtCore.QRect(20, 200, 121, 22))
-        self.colorRadio.setObjectName(_fromUtf8("colorRadio"))
         self.textEdit = QtGui.QTextEdit(Form)
         self.textEdit.setEnabled(False)
         self.textEdit.setGeometry(QtCore.QRect(20, 10, 171, 31))
@@ -43,6 +40,9 @@ class Ui_Form(object):
         self.grayRadio = QtGui.QRadioButton(self.groupBox)
         self.grayRadio.setGeometry(QtCore.QRect(0, 30, 116, 22))
         self.grayRadio.setObjectName(_fromUtf8("grayRadio"))
+        self.colorRadio = QtGui.QRadioButton(self.groupBox)
+        self.colorRadio.setGeometry(QtCore.QRect(0, 60, 121, 22))
+        self.colorRadio.setObjectName(_fromUtf8("colorRadio"))
         self.comboBox = QtGui.QComboBox(Form)
         self.comboBox.setGeometry(QtCore.QRect(160, 150, 101, 27))
         self.comboBox.setObjectName(_fromUtf8("comboBox"))
@@ -65,9 +65,9 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         Form.setWindowTitle(_translate("Form", "Histogram equalizer", None))
         self.loadButton.setText(_translate("Form", "Load Image", None))
-        self.colorRadio.setText(_translate("Form", "Color", None))
         self.groupBox.setTitle(_translate("Form", "Image type", None))
         self.grayRadio.setText(_translate("Form", "Grayscale", None))
+        self.colorRadio.setText(_translate("Form", "Color", None))
         self.eqButton.setText(_translate("Form", "Equalize", None))
         self.showButton.setText(_translate("Form", "Show", None))
         self.cmpButton.setText(_translate("Form", "Compare with origin", None))
