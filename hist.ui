@@ -26,19 +26,6 @@
     <string>Load Image</string>
    </property>
   </widget>
-  <widget class="QRadioButton" name="colorRadio">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>200</y>
-     <width>121</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Color</string>
-   </property>
-  </widget>
   <widget class="QTextEdit" name="textEdit">
    <property name="enabled">
     <bool>false</bool>
@@ -75,6 +62,19 @@
     </property>
     <property name="text">
      <string>Grayscale</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="colorRadio">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>60</y>
+      <width>121</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Color</string>
     </property>
    </widget>
   </widget>
@@ -142,7 +142,6 @@
   </widget>
   <zorder>groupBox</zorder>
   <zorder>loadButton</zorder>
-  <zorder>colorRadio</zorder>
   <zorder>textEdit</zorder>
   <zorder>comboBox</zorder>
   <zorder>eqButton</zorder>
