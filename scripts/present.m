@@ -1,4 +1,9 @@
-function [] = present(origin, corr)
+function [] = present(path)
+
+I = imread(path)
+size(I)
+origin = histeq(I);
+corr = histcor(I);
 
 figure(1);
 subplot(2,1,1)
