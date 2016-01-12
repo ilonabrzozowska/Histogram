@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'hist.ui'
 #
-# Created: Sun Jan 10 14:52:17 2016
+# Created: Tue Jan 12 01:53:53 2016
 #      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -58,6 +58,9 @@ class Ui_Form(object):
         self.label = QtGui.QLabel(Form)
         self.label.setGeometry(QtCore.QRect(10, 260, 371, 20))
         self.label.setObjectName(_fromUtf8("label"))
+        self.saveImg = QtGui.QPushButton(Form)
+        self.saveImg.setGeometry(QtCore.QRect(160, 230, 91, 27))
+        self.saveImg.setObjectName(_fromUtf8("saveImg"))
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -72,4 +75,5 @@ class Ui_Form(object):
         self.showButton.setText(_translate("Form", "Show", None))
         self.cmpButton.setText(_translate("Form", "Compare with origin", None))
         self.label.setText(_translate("Form", "Histogram equalizer", None))
+        self.saveImg.setText(_translate("Form", "Save", None))
 

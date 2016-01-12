@@ -9,6 +9,7 @@ import oct2py
 import Image
 import cv2
 
+
 def myread(file):
 	img = cv2.imread(file)
 	img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
@@ -22,13 +23,15 @@ if __name__ == "__main__":
 	scriptPath = os.path.dirname(os.path.realpath(__file__))
 	octave = oct2py.Oct2Py()
 	octave.addpath(scriptPath)
-	octave.pkg('load', 'image')
+	octave = oct2py.Oct2Py()
 	
 	img = cv2.imread(file,cv2.CV_LOAD_IMAGE_GRAYSCALE)
 	image = Image.open(file).convert("L")
 
 
+	#And here is the magic#
 	img_cor = octave.histcor(image)
+
 	im = Image.fromarray(img_cor)
 	plt.figure(1)
 	plt.subplot(2,1,1)
