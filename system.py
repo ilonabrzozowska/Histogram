@@ -18,6 +18,7 @@ class MyForm(QtGui.QMainWindow):
 
         self.octave = oct2py.Oct2Py()
         self.octave.addpath('./scripts')
+        self.octave.pkg('load', 'image')
 
         self.ui.comboBox.addItem("Uniform")
         self.ui.comboBox.addItem("Adaptive")
@@ -44,26 +45,29 @@ class MyForm(QtGui.QMainWindow):
 
         if self.ui.grayRadio.isChecked():
             working_image = self.image.convert("L")
+            self.img_cor = Image.fromarray(self.octave.hist_processings(working_image))
+            self.img_cor.show()
+            self.orgcmp = self.image.convert("LA")
         elif self.ui.colorRadio.isChecked():
-            print "color"
+            working_image = self.image
+            self.octave.hist_processings(working_image)
+            self.img_cor = Image.open('tmp.png')
+            self.img_cor.show()
+            self.orgcmp = self.image
         else:
-            run = 0
             QtGui.QMessageBox.information(self,"Warning", "Please check one of available options.", QtGui.QMessageBox.Ok)
 
-        if run == 1:
-            self.img_cor = Image.fromarray(self.octave.histcor(working_image))
-            self.img_cor.show()
 
     def compare(self):
-        self.octave.present(self.image.convert("L"), self.img_cor.convert("L"))
-        # plt.figure(1)
-        # plt.subplot(2,1,1)
-        # plt.imshow(self.image.convert("LA"))
-        # plt.subplot(2,1,2)
-        # plt.hist(numpy.array(self.image).flatten(), 256, range=(0.0,1.0), fc='k', ec='k')
-        # # plt.subplot(2,1,2)
-        # # plt.imshow(self.img_cor)
-        # # plt.show()
+        # self.octave.present(self.image, self.img_cor)
+        plt.figure(1)
+        plt.subplot(2,1,1)
+        plt.imshow(self.orgcmp)
+        plt.subplot(2,1,2)
+        plt.hist(numpy.array(self.image).flatten(), 256, range=(0.0,1.0), fc='k', ec='k')
+        plt.subplot(2,1,2)
+        plt.imshow(self.img_cor)
+        plt.show()
 
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)

@@ -140,6 +140,19 @@
     <string>Histogram equalizer</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="cmpButton_2">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>230</y>
+     <width>91</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </widget>
   <zorder>groupBox</zorder>
   <zorder>loadButton</zorder>
   <zorder>textEdit</zorder>
@@ -148,6 +161,7 @@
   <zorder>showButton</zorder>
   <zorder>cmpButton</zorder>
   <zorder>label</zorder>
+  <zorder>cmpButton_2</zorder>
  </widget>
  <resources/>
  <connections/>
